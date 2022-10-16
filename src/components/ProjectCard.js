@@ -1,11 +1,14 @@
 import React from 'react';
 import SkillsIcon from "./SkillsIcon";
 
-function ProjectCard({image, skills, title, type}) {
+function ProjectCard({image, skills, title, type, link}) {
     return (
-        <div className={"w-[500px] mb-10"} >
-            <a href="#">
-                <img src={image} alt="Placeholder img" className={"hover:scale-[1.03] hover:shadow-xl ease-in-out duration-300 shadow"}/>
+        <div className={"w-[600px] mb-10"} >
+            <a href={link} target="_blank" rel="noreferrer">
+                <img
+                    src={image}
+                    alt="Placeholder img"
+                    className={"h-[300px] w-full hover:scale-[1.03] hover:shadow-xl ease-in-out duration-300 shadow"}/>
             </a>
             <div className={"flex flex-row justify-center space-x-1.5 mt-2"}>
                 {skills.map((skill) =>

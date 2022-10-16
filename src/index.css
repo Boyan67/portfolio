@@ -12,3 +12,16 @@ html {
 body{
     margin: 0;
 }
+
+.link-effect{
+    box-shadow: inset 0 0 0 0 #EF3A38;
+    margin: 0 -.3rem;
+    padding: 0 .7rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.link-effect:hover{
+    box-shadow: inset 100px 0 0 0 #EF3A38;
+    color: white;
+}
+

@@ -4,7 +4,7 @@ import React from 'react'
 import {FaChevronCircleDown} from "react-icons/fa";
 import SocialBanner from "./components/SocialBanner";
 import ProjectCard from "./components/ProjectCard";
-import {projects, skills} from "./data";
+import {frameworks, languages, projects, skills, software} from "./data";
 import AboutSection from "./components/AboutSection";
 
 export function navigateInPage (ele){
@@ -20,7 +20,7 @@ function App() {
     const [darkToggle, setDarkToggle] = React.useState(true)
 
     return (
-        <div className={`${darkToggle ? 'dark' : ''}`}>
+        <div className={`${darkToggle ? 'dark' : ''}`} id={"landing-page"}>
             <div className={"bg-gray-100 dark:bg-gradient-to-tl from-black to-[#303030] h-screen" +
                 ""}>
                 <Navbar darkMode={darkToggle} setDarkToggle={setDarkToggle}/>
@@ -51,13 +51,14 @@ function App() {
                     <p className={"text-gray-800"}>PROJECTS</p>
                     <p className={"text-main-100"}>//</p>
                 </div>
-                <div className={"flex flex-row flex-wrap justify-around w-[95%] lg:w-[70%] self-center"}>
+                <div className={"flex flex-row flex-wrap justify-around w-[95%] lg:w-[75%] self-center"}>
                     {projects.map((project) => (
                         <ProjectCard
                             skills={project.skills}
                             title={project.title}
                             type={project.type}
                             image={project.image}
+                            link={project.link}
                         />
                     ))}
                 </div>
@@ -70,15 +71,15 @@ function App() {
                 <div className={"w-[100%] lg:w-[66%]"}>
                     <div className={"flex flex-row text-4xl font-bold justify-center pt-10 space-x-2"}>
                         <p className={"text-main-100"}>//</p>
-                        <p className={"text-gray-300"}>ABOUT</p>
+                        <p className={"text-gray-800 dark:text-gray-200"}>ABOUT</p>
                         <p className={"text-main-100"}>//</p>
                     </div>
 
                     <AboutSection
                         aboutText={"Some random text here blah"}
-                        languages={skills}
-                        software={skills}
-                        frameworks={skills}
+                        languages={languages}
+                        software={software}
+                        frameworks={frameworks}
                     />
                 </div>
             </div>
